@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CardList from '../components/CardList.js';
 import SearchBox from '../components/SearchBox.js';
 import Scroll from '../components/Scroll.js';
+import Header from '../components/Header.js';
 
 
 import { setSearchField, requestRobots } from '../actions.js';
@@ -34,7 +35,7 @@ class App extends Component {
         })
         return (
         <div className='tc'>
-            <h1 className='f1'>RoboFriends</h1>
+            <Header />
             <SearchBox searchChange={ onSearchChange } />
             <Scroll>
             { isPending ? <h1>Loading...</h1> :
