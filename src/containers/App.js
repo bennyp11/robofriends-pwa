@@ -1,46 +1,49 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import CardList from '../components/CardList.js';
 import SearchBox from '../components/SearchBox.js';
 import Scroll from '../components/Scroll.js';
-import ErrorBoundry from '../components/ErrorBoundry.js';
+
+
+import { setSearchField, requestRobots } from '../actions.js';
+
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchRobots.searchField,
+        robots: state.requestRobots.robots,
+        isPending: state.requestRobots.isPending
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+    onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
+    }
+}
 
 class App extends Component {
-    constructor(){
-        super()
-        this.state = {
-            robots: [],
-            searchField: ''
-        }
-    }
-
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(users => {this.setState({ robots: users })});
+        this.props.onRequestRobots();
     }
-
-    onSearchChange = (e) => {
-        this.setState({ searchField: e.target.value })
-    }
-
 
     render(){
-        const {robots, searchField} = this.state;
+        const { searchField, onSearchChange, robots, isPending } = this.props;
         const filtered = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
-        return !robots.length ?
-        <h1> loading </h1> :
-        (
+        return (
         <div className='tc'>
             <h1 className='f1'>RoboFriends</h1>
-            <SearchBox searchChange={this.onSearchChange} />
+            <SearchBox searchChange={ onSearchChange } />
             <Scroll>
+            { isPending ? <h1>Loading...</h1> :
                 <CardList robots={filtered}/>
+            }
             </Scroll>
         </div>
         );
     }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App) //example of higher order functions/components
