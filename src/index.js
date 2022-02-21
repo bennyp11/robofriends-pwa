@@ -8,6 +8,7 @@ import { searchRobots, requestRobots } from './reducers.js';
 import './index.css';
 import App from './containers/App.js';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorker from './service-worker.js';
 import 'tachyons';
 
 const logger = createLogger();
