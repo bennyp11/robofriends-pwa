@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/robofriends-pwa/static/css/main.bc6e6c0f.css",
-    "main.js": "/robofriends-pwa/static/js/main.947c46df.js",
+    "main.css": "/robofriends-pwa/static/css/main.202263e7.css",
+    "main.js": "/robofriends-pwa/static/js/main.599933c2.js",
     "static/js/787.1ed564d8.chunk.js": "/robofriends-pwa/static/js/787.1ed564d8.chunk.js",
     "service-worker.js": "/robofriends-pwa/service-worker.js",
     "index.html": "/robofriends-pwa/index.html",
-    "main.bc6e6c0f.css.map": "/robofriends-pwa/static/css/main.bc6e6c0f.css.map",
-    "main.947c46df.js.map": "/robofriends-pwa/static/js/main.947c46df.js.map",
+    "main.202263e7.css.map": "/robofriends-pwa/static/css/main.202263e7.css.map",
+    "main.599933c2.js.map": "/robofriends-pwa/static/js/main.599933c2.js.map",
     "787.1ed564d8.chunk.js.map": "/robofriends-pwa/static/js/787.1ed564d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc6e6c0f.css",
-    "static/js/main.947c46df.js"
+    "static/css/main.202263e7.css",
+    "static/js/main.599933c2.js"
   ]
 }
