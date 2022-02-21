@@ -8,7 +8,7 @@ import { searchRobots, requestRobots } from './reducers.js';
 import './index.css';
 import App from './containers/App.js';
 import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './service-worker.js';
+import registerServiceWorker from './service-worker.js';
 import 'tachyons';
 
 const logger = createLogger();
@@ -26,4 +26,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-serviceWorker.register();
+registerServiceWorker();
